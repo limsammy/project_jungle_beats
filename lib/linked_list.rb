@@ -16,6 +16,16 @@ class LinkedList
     end
   end
 
+  def prepend(data)
+    if head.nil?
+      @head = Node.new(data)
+    else
+      head_to_move = @head
+      @head = Node.new(data)
+      @head.next_node = head_to_move
+    end
+  end
+
   def count
     current_node = @head
     count = 1
