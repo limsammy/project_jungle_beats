@@ -1,12 +1,8 @@
 class Node
-  attr_accessor :data, :next_node
+  attr_accessor :next_node, :data
 
   def initialize(data, next_node = nil)
     @data = data
     @next_node = next_node
   end
 end
-
-node = Node.new("plop")
-p node.data
-p node.next_node
