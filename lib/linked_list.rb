@@ -8,35 +8,6 @@ class LinkedList
     @head = nil
   end
 
-  def count
-    current_node = @head
-    count = 1
-    until current_node.next_node.nil?
-      current_node = current_node.next_node
-      count += 1
-    end
-    count
-  end
-
-  def to_string
-    elements = ""
-    elements << @head.data
-    current_node = @head.next_node
-    until current_node.nil?
-      elements << " " + current_node.data
-      current_node = current_node.next_node
-    end
-    elements
-  end
-
-  def get_current_node(data)
-    current_node = @head
-    until current_node.next_node.nil?
-      current_node = current_node.next_node
-    end
-    current_node.next_node = Node.new(data)
-  end
-
   def append(data)
     if head.nil?
       @head = Node.new(data)
@@ -69,6 +40,35 @@ class LinkedList
       insert_node.next_node = current_node.next_node
       current_node.next_node = insert_node
     end
+  end
+
+  def count
+    current_node = @head
+    count = 1
+    until current_node.next_node.nil?
+      current_node = current_node.next_node
+      count += 1
+    end
+    count
+  end
+
+  def to_string
+    elements = ""
+    elements << @head.data
+    current_node = @head.next_node
+    until current_node.nil?
+      elements << " " + current_node.data
+      current_node = current_node.next_node
+    end
+    elements
+  end
+
+  def get_current_node(data)
+    current_node = @head
+    until current_node.next_node.nil?
+      current_node = current_node.next_node
+    end
+    current_node.next_node = Node.new(data)
   end
 end
 
