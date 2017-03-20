@@ -15,10 +15,10 @@ class LinkedList < Node
   end
 
   def count
-    current = @head
-    count = 0
-    until current.next_node == nil
-      current = current.next_node
+    current_node = @head
+    count = 1
+    until current_node.next_node == nil
+      current_node = current.next_node
       count += 1
     end
     count
