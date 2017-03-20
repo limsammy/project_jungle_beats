@@ -26,6 +26,22 @@ class LinkedList
     end
   end
 
+  def insert(pos, data)
+    if pos > count
+      puts "List has only #{count} items."
+    else
+      current_node = @head
+      count = 1
+      until count == pos
+        current_node = current_node.next_node
+        count += 1
+      end
+      insert_node = Node.new(data)
+      insert_node.next_node = current_node.next_node
+      current_node.next_node = insert_node
+    end
+  end
+
   def count
     current_node = @head
     count = 1
