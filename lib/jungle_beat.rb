@@ -5,6 +5,8 @@ class JungleBeat
 
   def initialize
     @list = LinkedList.new
+    @rate = 500
+    @voice = "Boing"
   end
 
   def append(data)
@@ -15,5 +17,9 @@ class JungleBeat
 
   def count
     list.count
+  end
+
+  def play
+    `say -r #{@rate} -v #{@voice} #{list.to_string}`
   end
 end
