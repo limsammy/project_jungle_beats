@@ -2,11 +2,12 @@ require_relative 'linked_list'
 
 class JungleBeat
   attr_reader :list
+  attr_accessor :rate, :voice
 
-  def initialize
+  def initialize(rate=500, voice="Boing")
     @list = LinkedList.new
-    @rate = 500
-    @voice = "Boing"
+    @rate = rate
+    @voice = voice
   end
 
   def append(data)
