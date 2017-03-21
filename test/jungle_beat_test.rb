@@ -4,9 +4,14 @@ require 'minitest/pride'
 require '../lib/jungle_beat'
 
 class JungleBeatTest < Minitest::Test
+  def test_jungle_beat_exists
+    jb = JungleBeat.new
+    assert_instance_of JungleBeat, jb
+  end
+  
   def test_jungle_beat_instance_is_list
     jb = JungleBeat.new
-    assert_equal jb.list.class.to_s, "LinkedList"
+    assert_instance_of LinkedList, jb.list
   end
 
   def test_head_is_nil
