@@ -77,4 +77,14 @@ class LinkedListTest < MiniTest::Test
     list.append("found")
     assert_equal true, list.includes?("found")
   end
+
+  def test_pop_removes_last_element
+    list = LinkedList.new
+    list.append("now")
+    list.append("remove")
+    list.append("this")
+    list.pop
+    assert_equal 2, list.count
+    assert_equal "now", list.head.data
+  end
 end
