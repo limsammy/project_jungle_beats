@@ -4,6 +4,11 @@ require 'minitest/pride'
 require '../lib/node'
 
 class NodeTest < Minitest::Test
+  def test_node_exists
+    node = Node.new("plop")
+    assert_instance_of Node, node
+  end
+  
   def test_node_is_created
     node = Node.new("plop")
     assert_equal node.class.to_s, "Node"
