@@ -38,4 +38,13 @@ class LinkedListTest < MiniTest::Test
     assert_equal list.to_string.class.to_s, "String"
     assert_equal list.to_string, "doop"
   end
+
+  def test_can_append_multiple_elements
+    list = LinkedList.new
+    list.append("doop")
+    list.append("deep")
+    assert_equal "deep", list.head.next_node.data
+    assert_equal 2, list.count
+    assert_equal "doop deep", list.to_string
+  end
 end
