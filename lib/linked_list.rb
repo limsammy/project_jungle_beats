@@ -121,8 +121,8 @@ class LinkedList
     until current_node.next_node.next_node.nil?
       current_node = current_node.next_node
     end
-    new_last_element = current_node.next_node.data
+    last_element = current_node.next_node.data
     current_node.next_node = nil
-    new_last_element
+    last_element
   end
 end
