@@ -70,19 +70,31 @@ class LinkedList
       count += 1
       current_node = current_node.next_node
     end
-    create_found(num_elements, current_node)
+    generate_found(num_elements, current_node)
   end
 
   def includes?(element)
     current_node = @head
 
-    until current_node == nil
+    until current_node.nil?
       return true if current_node.data == element
       current_node = current_node.next_node
     end
   end
 
-  def create_found(num_elements, current_node)
+  def pop
+    if @head.nil?
+      puts "Nothing to pop!"
+    elsif @head.next_node.nil?
+      last_element = @head.data
+      @head = nil
+      last_element
+    else
+      remove_last_element
+    end
+  end
+
+  def generate_found(num_elements, current_node)
     found = ''
     count = 0
     until count == num_elements
@@ -98,11 +110,25 @@ class LinkedList
   end
 
   def get_current_node(data)
+    go_to_last_node.next_node = Node.new(data)
+  end
+
+  def go_to_last_node
     current_node = @head
     until current_node.next_node.nil?
       current_node = current_node.next_node
     end
-    current_node.next_node = Node.new(data)
+    current_node
+  end
+
+  def remove_last_element
+    current_node = @head
+    until current_node.next_node.next_node.nil?
+      current_node = current_node.next_node
+    end
+    new_last_element = current_node.next_node.data
+    current_node.next_node = nil
+    new_last_element
   end
 end
 
