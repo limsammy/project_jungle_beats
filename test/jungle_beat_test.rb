@@ -8,4 +8,9 @@ class JungleBeatTest < Minitest::Test
     jb = JungleBeat.new
     assert_equal jb.list.class.to_s, "LinkedList"
   end
+
+  def test_head_is_nil
+    jb = JungleBeat.new
+    assert_equal jb.list.head, nil
+  end
 end
