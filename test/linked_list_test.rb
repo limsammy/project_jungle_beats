@@ -13,4 +13,10 @@ class LinkedListTest < MiniTest::Test
     list = LinkedList.new
     assert_equal list.head, nil
   end
+
+  def test_can_append_new_node
+    list = LinkedList.new
+    list.append("doop")
+    assert_equal list.head.data, "doop"
+  end
 end
