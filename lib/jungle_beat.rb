@@ -13,7 +13,11 @@ class JungleBeat
 
   def append(data)
     data.split(" ").each do |element|
-      list.append(element)
+      if valid?(element)
+        list.append(element)
+      else
+        puts "#{element} is not a valid sound."
+      end
     end
   end
 
