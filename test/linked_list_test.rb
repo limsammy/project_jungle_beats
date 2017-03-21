@@ -71,4 +71,10 @@ class LinkedListTest < MiniTest::Test
     list.append("2")
     assert_equal "2", list.find(2, 1)
   end
+
+  def test_includes_returns_true
+    list = LinkedList.new
+    list.append("found")
+    assert_equal true, list.includes?("found")
+  end
 end

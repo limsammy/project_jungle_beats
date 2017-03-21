@@ -77,7 +77,7 @@ class LinkedList
     current_node = @head
 
     until current_node == nil
-      return true if current_node.data == data
+      return true if current_node.data == element
       current_node = current_node.next_node
     end
   end
