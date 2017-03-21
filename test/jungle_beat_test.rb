@@ -50,4 +50,10 @@ class JungleBeatTest < Minitest::Test
     jb.rate=200
     assert_equal 200, jb.rate
   end
+
+  def test_all_returns_full_string
+    jb = JungleBeat.new
+    jb.append("tee tee tee")
+    assert_equal "tee tee tee", jb.all
+  end
 end
