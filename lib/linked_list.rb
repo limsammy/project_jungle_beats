@@ -8,10 +8,6 @@ class LinkedList
     @head = nil
   end
 
-  def tail
-    go_to_last_node
-  end
-
   def append(data)
     if head.nil?
       @head = Node.new(data)
@@ -114,10 +110,10 @@ class LinkedList
   end
 
   def get_current_node(data)
-    go_to_last_node.next_node = Node.new(data)
+    tail.next_node = Node.new(data)
   end
 
-  def go_to_last_node
+  def tail
     current_node = @head
     until current_node.next_node.nil?
       current_node = current_node.next_node
