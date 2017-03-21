@@ -11,7 +11,7 @@ class LinkedListTest < MiniTest::Test
 
   def test_head_is_nil
     list = LinkedList.new
-    assert_equal list.head, nil
+    assert_nil list.head
   end
 
   def test_can_append_new_node
