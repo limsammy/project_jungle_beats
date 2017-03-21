@@ -93,6 +93,6 @@ class LinkedListTest < MiniTest::Test
     list.append("first")
     list.append("middle")
     list.append("last")
-    assert_equal "last", list.tail
+    assert_equal "last", list.tail.data
   end
 end
