@@ -87,4 +87,12 @@ class LinkedListTest < MiniTest::Test
     assert_equal 2, list.count
     assert_equal "now", list.head.data
   end
+
+  def test_tail_returns_last_element
+    list = LinkedList.new
+    list.append("first")
+    list.append("middle")
+    list.append("last")
+    assert_equal "last", list.tail
+  end
 end
