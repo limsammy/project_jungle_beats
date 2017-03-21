@@ -23,4 +23,8 @@ class JungleBeat
   def play
     `say -r #{@rate} -v #{@voice} #{list.to_string}`
   end
+
+  def all
+    list.to_string
+  end
 end
