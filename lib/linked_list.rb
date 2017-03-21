@@ -11,7 +11,7 @@ class LinkedList
     if head.nil?
       @head = Node.new(data)
     else
-      get_current_node(data)
+      tail.next_node = Node.new(data)
     end
   end
 
@@ -106,10 +106,6 @@ class LinkedList
       end
     end
     found.strip
-  end
-
-  def get_current_node(data)
-    tail.next_node = Node.new(data)
   end
 
   def tail
