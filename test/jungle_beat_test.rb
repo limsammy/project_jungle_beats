@@ -61,4 +61,10 @@ class JungleBeatTest < Minitest::Test
     jb = JungleBeat.new
     assert_equal true, jb.valid?("tee")
   end
+
+  def test_append_rejects_invalid_sounds
+    jb = JungleBeat.new
+    jb.append("tee boo Mississippi bop")
+    assert_equal "tee boo bop", jb.all
+  end
 end
