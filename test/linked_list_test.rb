@@ -31,4 +31,11 @@ class LinkedListTest < MiniTest::Test
     list.append("doop")
     assert_equal list.count, 1
   end
+
+  def test_to_string_method_returns_string
+    list = LinkedList.new
+    list.append("doop")
+    assert_equal list.to_string.class.to_s, "String"
+    assert_equal list.to_string, "doop"
+  end
 end

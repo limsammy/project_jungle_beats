@@ -6,6 +6,7 @@ require './lib/node'
 class NodeTest < Minitest::Test
   def test_node_is_created
     node = Node.new("plop")
+    assert_equal node.class.to_s, "Node"
     assert_equal "plop", node.data
   end
 
