@@ -1,4 +1,4 @@
-gem 'minitest', '~> 5.0'
+gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
 require '../lib/node'
