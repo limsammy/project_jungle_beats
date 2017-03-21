@@ -1,4 +1,5 @@
 require_relative 'node'
+require_relative 'node_finder'
 
 class LinkedList
   attr_reader :head
@@ -44,7 +45,7 @@ class LinkedList
   def count
     current_node = @head
     count = 1
-    until current_node.next_node.nil?
+    while current_node.next_node
       current_node = current_node.next_node
       count += 1
     end
@@ -55,7 +56,7 @@ class LinkedList
     elements = ""
     elements << @head.data
     current_node = @head.next_node
-    until current_node.nil?
+    while current_node
       elements << " " + current_node.data
       current_node = current_node.next_node
     end
@@ -63,13 +64,7 @@ class LinkedList
   end
 
   def find(pos, num_elements)
-    current_node = @head
-    count = 0
-    until count == pos
-      count += 1
-      current_node = current_node.next_node
-    end
-    generate_found(num_elements, current_node)
+    NodeFinder.locate(@head, pos, num_elements)
   end
 
   def includes?(element)
@@ -91,21 +86,6 @@ class LinkedList
     else
       remove_last_element
     end
-  end
-
-  def generate_found(num_elements, current_node)
-    found = ''
-    count = 0
-    until count == num_elements
-      if current_node.nil?
-        break
-      else
-        count += 1
-        found << current_node.data + ' '
-        current_node = current_node.next_node
-      end
-    end
-    found.strip
   end
 
   def tail
