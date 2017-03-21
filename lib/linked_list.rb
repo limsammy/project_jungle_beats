@@ -1,5 +1,4 @@
 require_relative 'node'
-require 'pry'
 
 class LinkedList
   attr_reader :head
@@ -131,5 +130,3 @@ class LinkedList
     new_last_element
   end
 end
-
-# binding.pry
