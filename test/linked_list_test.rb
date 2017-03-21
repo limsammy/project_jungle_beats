@@ -6,36 +6,42 @@ require '../lib/linked_list'
 class LinkedListTest < MiniTest::Test
   def test_linked_list_is_created
     list = LinkedList.new
+
     assert_instance_of LinkedList, list
   end
 
   def test_head_is_nil
     list = LinkedList.new
+
     assert_nil list.head
   end
 
   def test_can_append_new_node
     list = LinkedList.new
     list.append("doop")
+
     assert_equal list.head.data, "doop"
   end
 
   def test_next_node_is_nil_after_append
     list = LinkedList.new
     list.append("doop")
+
     assert_nil list.head.next_node
   end
 
   def test_count_after_append_is_1
     list = LinkedList.new
     list.append("doop")
+
     assert_equal list.count, 1
   end
 
   def test_to_string_method_returns_string
     list = LinkedList.new
     list.append("doop")
-    assert_equal list.to_string.class.to_s, "String"
+
+    assert_instance_of String, list.to_string
     assert_equal list.to_string, "doop"
   end
 
@@ -43,6 +49,7 @@ class LinkedListTest < MiniTest::Test
     list = LinkedList.new
     list.append("doop")
     list.append("deep")
+
     assert_equal "deep", list.head.next_node.data
     assert_equal 2, list.count
     assert_equal "doop deep", list.to_string
@@ -52,6 +59,7 @@ class LinkedListTest < MiniTest::Test
     list = LinkedList.new
     list.append("append")
     list.prepend("prepend")
+
     assert_equal 2, list.count
     assert_equal "prepend", list.head.data
   end
@@ -61,6 +69,7 @@ class LinkedListTest < MiniTest::Test
     list.append("zero")
     list.append("one")
     list.insert(1, "one/half")
+
     assert_equal "zero one/half one", list.to_string
   end
 
@@ -69,12 +78,14 @@ class LinkedListTest < MiniTest::Test
     list.append("0")
     list.append("1")
     list.append("2")
+
     assert_equal "2", list.find(2, 1)
   end
 
   def test_includes_returns_true
     list = LinkedList.new
     list.append("found")
+
     assert list.includes?("found")
   end
 
@@ -84,6 +95,7 @@ class LinkedListTest < MiniTest::Test
     list.append("remove")
     list.append("this")
     list.pop
+
     assert_equal 2, list.count
     assert_equal "now", list.head.data
   end
@@ -93,6 +105,7 @@ class LinkedListTest < MiniTest::Test
     list.append("first")
     list.append("middle")
     list.append("last")
+    
     assert_equal "last", list.tail.data
   end
 end
