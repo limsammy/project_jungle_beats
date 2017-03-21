@@ -73,6 +73,15 @@ class LinkedList
     create_found(num_elements, current_node)
   end
 
+  def includes?(element)
+    current_node = @head
+
+    until current_node == nil
+      return true if current_node.data == data
+      current_node = current_node.next_node
+    end
+  end
+
   def create_found(num_elements, current_node)
     found = ''
     count = 0
