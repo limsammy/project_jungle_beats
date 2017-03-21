@@ -26,11 +26,7 @@ class JungleBeat
     Dir.chdir(File.dirname(__FILE__))
     valid_words = File.open("valid.txt", "r")
     valid << valid_words.read.split(" ")
-    if valid[0].include?(element)
-      true
-    else
-      false
-    end
+    valid[0].include?(element) ? true : false
   end
 
   def count

@@ -29,12 +29,12 @@ class JungleBeatTest < Minitest::Test
     assert_equal 3, jb.count
   end
 
-  def test_returns_rate
+  def test_returns_default_rate
     jb = JungleBeat.new
     assert_equal 500, jb.rate
   end
 
-  def test_returns_voice
+  def test_returns_default_voice
     jb = JungleBeat.new
     assert_equal "Boing", jb.voice
   end

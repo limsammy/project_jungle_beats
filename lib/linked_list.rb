@@ -9,11 +9,7 @@ class LinkedList
   end
 
   def tail
-    current_node = @head
-    until current_node.next_node.nil?
-      current_node = current_node.next_node
-    end
-    current_node
+    go_to_last_node
   end
 
   def append(data)
