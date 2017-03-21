@@ -66,7 +66,7 @@ class LinkedList
   def find(pos, num_elements)
     current_node = @head
     count = 0
-    until count == position
+    until count == pos
       count += 1
       current_node = current_node.next_node
     end

@@ -55,4 +55,20 @@ class LinkedListTest < MiniTest::Test
     assert_equal 2, list.count
     assert_equal "prepend", list.head.data
   end
+
+  def test_can_insert_at_position
+    list = LinkedList.new
+    list.append("zero")
+    list.append("one")
+    list.insert(1, "one/half")
+    assert_equal "zero one/half one", list.to_string
+  end
+
+  def test_can_find_at_position
+    list = LinkedList.new
+    list.append("0")
+    list.append("1")
+    list.append("2")
+    assert_equal "2", list.find(3, 1)
+  end
 end
