@@ -23,7 +23,7 @@ class LinkedListTest < MiniTest::Test
   def test_next_node_is_nil_after_append
     list = LinkedList.new
     list.append("doop")
-    assert_equal list.head.next_node, nil
+    assert_nil list.head.next_node
   end
 
   def test_count_after_append_is_1
