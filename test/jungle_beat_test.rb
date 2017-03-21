@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/jungle_beat'
+require './lib/jungle_beat'
 
 class JungleBeatTest < Minitest::Test
   def test_jungle_beat_exists

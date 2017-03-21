@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/linked_list'
+require './lib/linked_list'
 
 class LinkedListTest < MiniTest::Test
   def test_linked_list_is_created

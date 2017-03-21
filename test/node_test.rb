@@ -1,7 +1,7 @@
 gem 'minitest'
 require 'minitest/autorun'
 require 'minitest/pride'
-require '../lib/node'
+require './lib/node'
 
 class NodeTest < Minitest::Test
   def test_node_exists
