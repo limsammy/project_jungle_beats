@@ -69,6 +69,6 @@ class LinkedListTest < MiniTest::Test
     list.append("0")
     list.append("1")
     list.append("2")
-    assert_equal "2", list.find(3, 1)
+    assert_equal "2", list.find(2, 1)
   end
 end

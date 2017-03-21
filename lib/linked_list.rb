@@ -79,12 +79,13 @@ class LinkedList
     until count == num_elements
       if current_node.nil?
         break
+      else
+        count += 1
+        found << current_node.data + ' '
+        current_node = current_node.next_node
       end
-      count += 1
-      found << current_node.data + ' '
-      current_node = current_node.next_node
     end
-    found
+    found.strip
   end
 
   def get_current_node(data)
