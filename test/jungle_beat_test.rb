@@ -56,4 +56,9 @@ class JungleBeatTest < Minitest::Test
     jb.append("tee tee tee")
     assert_equal "tee tee tee", jb.all
   end
+
+  def test_valid
+    jb = JungleBeat.new
+    assert_equal true, jb.valid?("tee")
+  end
 end
