@@ -63,6 +63,30 @@ class LinkedList
     elements
   end
 
+  def find(pos, num_elements)
+    current_node = @head
+    count = 0
+    until count == position
+      count += 1
+      current_node = current_node.next_node
+    end
+    create_found(num_elements, current_node)
+  end
+
+  def create_found(num_elements, current_node)
+    found = ''
+    count = 0
+    until count == num_elements
+      if current_node.nil?
+        break
+      end
+      count += 1
+      found << current_node.data + ' '
+      current_node = current_node.next_node
+    end
+    found
+  end
+
   def get_current_node(data)
     current_node = @head
     until current_node.next_node.nil?
