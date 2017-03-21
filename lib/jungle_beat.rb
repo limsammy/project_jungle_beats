@@ -12,4 +12,8 @@ class JungleBeat
       list.append(element)
     end
   end
+
+  def count
+    list.count
+  end
 end
