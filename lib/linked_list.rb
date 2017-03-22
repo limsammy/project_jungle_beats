@@ -63,7 +63,7 @@ class LinkedList
     elements
   end
 
-  def find(pos, num_elements)
+  def find(pos, num_elements=1)
     if pos > count
       "List only has #{count} items."
     else
