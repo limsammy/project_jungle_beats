@@ -64,7 +64,11 @@ class LinkedList
   end
 
   def find(pos, num_elements)
-    NodeFinder.locate(@head, pos, num_elements)
+    if pos > count
+      "List only has #{count} items."
+    else
+      NodeFinder.locate(@head, pos, num_elements)
+    end
   end
 
   def includes?(element)
